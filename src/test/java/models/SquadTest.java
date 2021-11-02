@@ -39,9 +39,15 @@ class SquadTest {
 
     }
     @Test
-    @DisplayName("Gets Squad Name")
-    public void get_HeroName_true(){
+    @DisplayName("Gets Squad's Name")
+    public void get_SquadName_true(){
         Squad justiceLeague = new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, new String[]{"Be as cool as the Avengers"});
         assertEquals("Justice League", justiceLeague.getSquadName());
+    }
+    @Test
+    @DisplayName("Gets Squad's Leader")
+    public void get_SquadLeader_true(){
+        Squad justiceLeague = new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, new String[]{"Be as cool as the Avengers"});
+        assertEquals("Superman", justiceLeague.getSquadLeader());
     }
 }

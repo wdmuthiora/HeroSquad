@@ -28,4 +28,8 @@ public class Squad {
     public String getSquadName() {
         return name;
     }
+
+    public String getSquadLeader() {
+        return leader;
+    }
 }
