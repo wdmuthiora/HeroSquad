@@ -22,4 +22,11 @@ class HeroTest {
         Hero thor = new Hero();
         assertTrue(thor instanceof Hero);
     }
+    @Test
+    @DisplayName("Hero Instantiates Correctly.")
+    public void hero_instantiatesCorrectly() {
+        Hero thor = new Hero();
+        assertTrue(thor instanceof Hero);
+    }
+
 }
