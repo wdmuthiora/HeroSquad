@@ -39,7 +39,7 @@ class SquadTest {
 
     }
     @Test
-    @DisplayName("Get Squad Name")
+    @DisplayName("Gets Squad Name")
     public void get_HeroName_true(){
         Squad justiceLeague = new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, new String[]{"Be as cool as the Avengers"});
         assertEquals("Justice League", justiceLeague.getSquadName());

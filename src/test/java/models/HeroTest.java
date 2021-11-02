@@ -30,15 +30,15 @@ class HeroTest {
         assertTrue(ironMan.allHeroes().contains(ironMan));
     }
     @Test
-    @DisplayName("Get Hero Name")
+    @DisplayName("Gets Hero's Name")
     public void get_HeroName_true(){
         Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
         assertEquals("Hulk", hulk.getHeroName());
     }
-//    @Test
-//    @DisplayName("Get Hero Name")
-//    public void get_HeroName_true(){
-//        Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
-//        assertEquals("Hulk", hulk.getHeroName());
-//    }
+    @Test
+    @DisplayName("Gets Hero's age")
+    public void get_HeroAge_true(){
+        Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
+        assertEquals(21, hulk.getHeroAge());
+    }
 }

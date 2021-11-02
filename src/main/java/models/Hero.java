@@ -33,4 +33,8 @@ public class Hero {
     public String getHeroName() {
         return name;
     }
+
+    public int getHeroAge() {
+        return age;
+    }
 }
