@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hero {
+    private int id;
     private String name;
     private int age;
     private String power;
@@ -23,6 +24,13 @@ public class Hero {
         this.squadMembership = squadMembership;
         this.nemesis = nemesis;
         this.experience = experience;
+        this.id=heroInstances.size();
+        heroInstances.add(this);
+
+    }
+
+    public static void clearAll() {
+        heroInstances.clear();
     }
 
     public List<Hero> allHeroes(){
@@ -52,11 +60,19 @@ public class Hero {
     public int getExperience() {
         return experience;
     }
-    public static void clearAllHeroes(){
-        heroInstances.clear(); //clear as a method is part of the ArrayList class.
-    }
 
     public String getWeakness() {
         return weakness;
+    }
+    public void deleteHero(){
+        heroInstances.remove(id-1);
+    }
+    public static Hero findById(int id) {
+        try {
+            return heroInstances.get(id - 1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+
     }
 }
