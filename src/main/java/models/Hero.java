@@ -64,7 +64,7 @@ public class Hero {
     public String getWeakness() {
         return weakness;
     }
-    public void deleteHero(){
+    public void deleteHero(int id){
         heroInstances.remove(id-1);
     }
     public static Hero findById(int id) {

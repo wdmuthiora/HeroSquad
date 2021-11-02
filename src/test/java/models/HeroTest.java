@@ -87,8 +87,18 @@ class HeroTest {
     public void get_HeroById() {
         Hero flash  = setUpTestHero();
         Hero foundHero = Hero.findById(1);
-        assertEquals(flash,foundHero);
+        assertEquals(flash, foundHero);
    }
+    @Test
+    @DisplayName("Delete a Hero by their Id")
+    public void deleteSpecificHero() {
+        Hero flash=setUpTestHero();
+        Hero hulk=setUpTestHero2();
+        flash.deleteHero(1);
+        assertEquals(1, flash.allHeroes().size());
+        assertEquals(false,flash.allHeroes().contains(flash));
+        assertEquals(true, flash.allHeroes().contains(hulk));
+    }
 
     private Hero setUpTestHero() {
         return new Hero("flash",30,"Super speed","no limit","Justice League","Reverse Flash", 1000);
