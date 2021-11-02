@@ -45,4 +45,8 @@ public class Hero {
     public String getHeroSquadMembership() {
         return squadMembership;
     }
+
+    public String getNemesis() {
+        return nemesis;
+    }
 }

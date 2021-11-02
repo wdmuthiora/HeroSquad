@@ -47,6 +47,12 @@ class HeroTest {
         Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
         assertEquals("Avengers", hulk.getHeroSquadMembership());
     }
+    @Test
+    @DisplayName("Gets Hero's nemesis")
+    public void get_HeroNemesis(){
+        Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
+        assertEquals("The Abomination", hulk.getNemesis());
+    }
 
 
 
