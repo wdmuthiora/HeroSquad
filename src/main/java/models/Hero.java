@@ -37,4 +37,12 @@ public class Hero {
     public int getHeroAge() {
         return age;
     }
+
+//    public String[] getHeroPowers() {
+//        return powers;
+//    }
+
+    public String getHeroSquadMembership() {
+        return squadMembership;
+    }
 }

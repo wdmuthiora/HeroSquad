@@ -41,4 +41,22 @@ class HeroTest {
         Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
         assertEquals(21, hulk.getHeroAge());
     }
+    @Test
+    @DisplayName("Gets Hero's squad membership")
+    public void get_HeroSquadMembership(){
+        Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
+        assertEquals("Avengers", hulk.getHeroSquadMembership());
+    }
+
+
+
+
+
+
+//    @Test
+//    @DisplayName("Gets Hero's powers")
+//    public void get_HeroPowers_true(){
+//        Hero hulk = new Hero("Hulk",21, new String[]{"Durability"},new String[]{"Anger"},"Avengers","The Abomination", 5 );
+//        assertEquals(new String[]{"Durability"}, hulk.getHeroPowers());
+//    }
 }
