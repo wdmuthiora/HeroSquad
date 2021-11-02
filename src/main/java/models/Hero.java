@@ -11,8 +11,9 @@ public class Hero {
     private String squadMembership;
     private String [] nemesis;
     private int experience;
-    private static List<Hero> instances = new ArrayList<Hero>();
-
+    //hold all Heroes created
+    private static List<Hero> heroInstances = new ArrayList<Hero>();
+//constructor
  public Hero(){
 
  }

@@ -24,7 +24,7 @@ class HeroTest {
     }
     @Test
     @DisplayName("Hero Instantiates Correctly.")
-    public void hero_instantiatesCorrectly() {
+    public void hero_iinstantiatesCorrectly() {
         Hero thor = new Hero();
         assertTrue(thor instanceof Hero);
     }
