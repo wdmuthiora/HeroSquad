@@ -16,6 +16,9 @@ public class Squad {
 
     //constructor
     public Squad(){
-
+        squadInstances.add(this);
+    }
+    public List<Squad> allSquads(){
+        return squadInstances;
     }
 }

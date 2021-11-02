@@ -23,4 +23,10 @@ class SquadTest {
         Squad avengers = new Squad();
         assertTrue(avengers instanceof Squad);
     }
+    @Test
+    @DisplayName("Returns all instances of Heroes")
+    public void all_returnsAllInstancesOfSquad_true() {
+        Squad justiceLeague = new Squad();
+        assertTrue(justiceLeague.allSquads().contains(justiceLeague));
+    }
 }
