@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Squad {
-    private Hero leader;
+
     private String name;
-    //array to store team members.
-    private List <Hero> teamMembers = new ArrayList<Hero>();
+    //figure out how to use Hero object instead
+    private String leader;
+    //array to store team members(figure out how to use Hero object instead).
+    private List <String> teamMembers = new ArrayList<String>();
     //Hold all squads created.
     private int maximumSize;
     //list of missions
-    private List <Object> missions = new ArrayList<Object>();
-    private  static List<Squad> squadInstances = new ArrayList<Squad>();
+    private List <String> missions = new ArrayList<String>();
+    private static List<Squad> squadInstances = new ArrayList<Squad>();
 
     //constructor
-    public Squad(){
+    public Squad(String name, String leader, String [] teamMembers, int maximumSize, String[] missions){
         squadInstances.add(this);
     }
     public List<Squad> allSquads(){
