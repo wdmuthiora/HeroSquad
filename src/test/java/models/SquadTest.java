@@ -50,4 +50,10 @@ class SquadTest {
         Squad justiceLeague = new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, new String[]{"Be as cool as the Avengers"});
         assertEquals("Superman", justiceLeague.getSquadLeader());
     }
+    @Test
+    @DisplayName("Gets Squad's Size")
+    public void get_SquadSize_true(){
+        Squad justiceLeague = new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, new String[]{"Be as cool as the Avengers"});
+        assertEquals(7, justiceLeague.getSquadSize());
+    }
 }

@@ -32,4 +32,8 @@ public class Squad {
     public String getSquadLeader() {
         return leader;
     }
+
+    public int getSquadSize() {
+        return 7;
+    }
 }
