@@ -9,16 +9,16 @@ public class Squad {
     private String leader;
     private List <String> teamMembers = new ArrayList<String>();     //array to store team members(figure out how to use Hero object instead).
     private int maximumSize;
-    private List <String> missions = new ArrayList<String>();
+    private String mission;
     private static List<Squad> squadInstances = new ArrayList<Squad>();
 
     //constructor
-    public Squad(String name, String leader, String [] teamMembers, int maximumSize, String[] missions){
+    public Squad(String name, String leader, String [] teamMembers, int maximumSize, String mission){
         this.name=name;
         this.leader=leader;
 //        this.teamMembers=teamMembers;
         this.maximumSize=maximumSize;
-//        this.missions=missions;
+        this.mission=mission;
         squadInstances.add(this);
     }
     public List<Squad> allSquads(){
@@ -35,5 +35,8 @@ public class Squad {
 
     public int getSquadSize() {
         return 7;
+    }
+    public static void clearAllSquads(){
+        squadInstances.clear(); //clear as a method is part of the ArrayList class.
     }
 }
