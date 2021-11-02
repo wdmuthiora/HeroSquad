@@ -13,8 +13,11 @@ public class Hero {
     private int experience;
     //hold all Heroes created
     private static List<Hero> heroInstances = new ArrayList<Hero>();
-//constructor
- public Hero(){
-
- }
+    //constructor
+    public Hero(){
+        heroInstances.add(this);
+    }
+    public List<Hero> allHeroes(){
+     return heroInstances;
+    }
 }

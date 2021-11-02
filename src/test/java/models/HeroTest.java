@@ -22,11 +22,13 @@ class HeroTest {
         Hero thor = new Hero();
         assertTrue(thor instanceof Hero);
     }
+
     @Test
-    @DisplayName("Hero Instantiates Correctly.")
-    public void hero_iinstantiatesCorrectly() {
-        Hero thor = new Hero();
-        assertTrue(thor instanceof Hero);
+    @DisplayName("Returns all instances of Heroes")
+    public void all_returnsAllInstancesOfHeroes_true() {
+        Hero firstHero = new Hero();
+        assertTrue(firstHero.allHeroes().contains(firstHero));
     }
+
 
 }
