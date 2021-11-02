@@ -24,11 +24,19 @@ class HeroTest {
     }
 
     @Test
-    @DisplayName("Returns all instances of Heroes")
-    public void all_returnsAllInstancesOfHeroes_true() {
-        Hero firstHero = new Hero();
-        assertTrue(firstHero.allHeroes().contains(firstHero));
+    @DisplayName("Returns one instance of Heroes")
+    public void all_returnsOneInstanceOfHeroes_true() {
+        Hero hulk = new Hero();
+        assertTrue(hulk.allHeroes().contains(hulk));
     }
+    @Test
+    @DisplayName("Returns two instances of Heroes")
+    public void all_returnsTwoInstancesOfHeroes_true() {
+        Hero spiderMan = new Hero();
+        Hero ironMan = new Hero();
+        assertTrue(spiderMan.allHeroes().contains(spiderMan));
+        assertTrue(ironMan.allHeroes().contains(ironMan));
 
+    }
 
 }
