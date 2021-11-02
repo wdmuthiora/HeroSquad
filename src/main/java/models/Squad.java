@@ -22,7 +22,7 @@ public class Squad {
         this.mission=mission;
         squadInstances.add(this);
     }
-    public List<Squad> allSquads(){
+    public static List<Squad> allSquads(){
         return squadInstances;
     }
 
@@ -52,8 +52,6 @@ public class Squad {
         }
 
     }
-
-
     public static void clearAllSquads(){
         squadInstances.clear(); //clear as a method is part of the ArrayList class.
     }

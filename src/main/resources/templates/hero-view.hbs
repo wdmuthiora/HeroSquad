@@ -1,29 +1,30 @@
 {{#partial "content"}}
   <div class="container bg-secondary">
-    <h1>Heroes</h1>
     <div class="row container">
       <div class="col-md-6">
-        <h3>{{name}} </h3>
+        <h3>{{hero.name}} </h3>
         <a href="#"><button class="btn btn-info btn-md">Details</button></a>
-        <p>Create Your Hero!</p>
+        <hr>
+        <p class="text-light">Create Your Hero!</p>
       </div>
 
       <div class="col-md-6 ">
-        <div class =" container card bg-success" >
-          <div class="card-body">
-            <hr>
-            <p class="text-light">Name : {{hero.name}}</p>
-            <hr>
-            <p class="text-light">Age : {{hero.age}}</p>
-            <p class="text-light">Main Power : {{hero.power}}</p>
-            <p class="text-light">Weakness : {{hero.weakness}}</p>
-            <p class="text-light">Squad-Membership : {{hero.squadMembership}}</p>
-            <p class="text-light">Nemesis : {{hero.nemesis}}</p>
-            <p class="text-light">Experience : {{hero.experience}}</p>
-            <a href="/#"><button class="btn btn-danger">Delete Hero</button></a>
-            <hr>
-          </div>
-        </div>
+        <br>
+            <div class =" container card bg-success" >
+                <div class="card-body">
+                    <hr>
+                    <p class="text-light">Name : {{hero.name}}</p>
+                    <hr>
+                    <p class="text-light">Age : {{hero.age}}</p>
+                    <p class="text-light">Main Power : {{hero.power}}</p>
+                    <p class="text-light">Weakness : {{hero.weakness}}</p>
+                    <p class="text-light">Squad-Membership : {{hero.squadMembership}}</p>
+                    <p class="text-light">Nemesis : {{hero.nemesis}}</p>
+                    <p class="text-light">Experience : {{hero.experience}}</p>
+                    <a href="/#"><button class="btn btn-danger">Delete Hero</button></a>
+                    <hr>
+                </div>
+            </div>
         <br>
       </div>
     </div>
