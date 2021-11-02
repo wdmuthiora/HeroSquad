@@ -49,4 +49,8 @@ public class Hero {
     public String getNemesis() {
         return nemesis;
     }
+
+    public int getExperience() {
+        return experience;
+    }
 }
