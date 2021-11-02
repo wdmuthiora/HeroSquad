@@ -29,4 +29,8 @@ public class Hero {
     public List<Hero> allHeroes(){
         return heroInstances;
     }
+
+    public String getHeroName() {
+        return name;
+    }
 }
