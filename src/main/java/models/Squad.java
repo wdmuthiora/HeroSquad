@@ -41,7 +41,7 @@ public class Squad {
     public String getSquadMission() {
         return mission;
     }
-    public void deleteSquad(){
+    public void deleteSquad(int id){
         squadInstances.remove(id-1);
     }
     public static Squad findById(int id){

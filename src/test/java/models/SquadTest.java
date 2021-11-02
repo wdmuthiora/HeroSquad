@@ -59,6 +59,24 @@ class SquadTest {
         Squad justiceLeague = setUpSquad2();
         assertEquals("Be as cool as the Avengers", justiceLeague.getSquadMission());
     }
+
+    @Test
+    @DisplayName("Find Squad by their id")
+    public void get_HeroById() {
+        Squad justiceLeague  = setUpSquad2();
+        Squad foundSquad = Squad.findById(1);
+        assertEquals(justiceLeague, foundSquad);
+    }
+    @Test
+    @DisplayName("Delete a Hero by their Id")
+    public void deleteSpecificHero() {
+        Squad avengers = setUpSquad();
+        Squad justiceLeague = setUpSquad2();
+        avengers.deleteSquad(1);
+        assertEquals(1, avengers.allSquads().size());
+        assertEquals(false,avengers.allSquads().contains(avengers));
+        assertEquals(true, avengers.allSquads().contains(justiceLeague));
+    }
     public Squad setUpSquad(){
         return new Squad("Avengers","Captain America", new String[]{"Captain America"},10,"Destroy Hydra");
     }
