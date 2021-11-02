@@ -57,6 +57,13 @@ class HeroTest {
         assertEquals("Super Strength", hulk.getHeroPower());
     }
 
+    @Test
+    @DisplayName("Gets Hero's weakness")
+    public void get_HeroWeakness(){
+        Hero hulk = new Hero("Hulk",21, "Durability","Anger","Avengers","The Abomination", 5 );
+        assertEquals("Anger", hulk.getWeakness());
+    }
+
    @Test
    @DisplayName("Gets Hero's squad membership")
    public void get_HeroSquadMembership(){
@@ -78,11 +85,6 @@ class HeroTest {
        assertEquals(5, hulk.getExperience());
    }
 
-    @Test
-    @DisplayName("Gets Hero's weakness")
-    public void get_HeroWeakness(){
-        Hero hulk = new Hero("Hulk",21, "Durability","Anger","Avengers","The Abomination", 5 );
-        assertEquals("Anger", hulk.getWeakness());
-    }
+
 
 }

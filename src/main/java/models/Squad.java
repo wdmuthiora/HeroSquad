@@ -39,4 +39,8 @@ public class Squad {
     public static void clearAllSquads(){
         squadInstances.clear(); //clear as a method is part of the ArrayList class.
     }
+
+    public String getSquadMission() {
+        return mission;
+    }
 }
