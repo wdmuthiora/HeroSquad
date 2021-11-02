@@ -33,7 +33,7 @@ public class Hero {
         heroInstances.clear();
     }
 
-    public List<Hero> allHeroes(){
+    public static List<Hero> allHeroes(){
         return heroInstances;
     }
 

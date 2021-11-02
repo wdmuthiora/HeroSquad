@@ -13,11 +13,11 @@ public class Squad {
     private static List<Squad> squadInstances = new ArrayList<Squad>();
 
     //constructor
-    public Squad(String name, String leader, String [] teamMembers, int maximumSize, String mission){
+    public Squad(String name, String leader, int maximumSize, String mission){
         this.id=squadInstances.size();
         this.name=name;
         this.leader=leader;
-//        this.teamMembers=teamMembers;
+        this.teamMembers=teamMembers;
         this.maximumSize=maximumSize;
         this.mission=mission;
         squadInstances.add(this);
