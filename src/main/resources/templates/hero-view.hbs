@@ -1,0 +1,49 @@
+{{#partial "content"}}
+  <div class="container bg-secondary">
+    <div class="row container">
+      <div class="col-md-6">
+        abc {{weakness}}
+       aces {{hero.name}}
+       qwerty{{hero.id}}
+        {{#if heroes}}
+        {{#each heroes}}
+            <p>{{age}}</p>
+            <p>{{name}}</p>
+            <p>{{id}}</p>
+            <p>{{power}}</p>
+            <p>{{weakness}}</p>
+            <p>{{squadMembership}}</p>
+            <a href="/hero-view/{{id}}"><button class="btn btn-info btn-md">Details</button></a>
+            <hr>
+        {{/each}}
+        {{else}}
+            <hr>
+            <p class="text-light">Create Your Hero!</p>
+        {{/if}}
+      </div>
+
+      <div class="col-md-6 ">
+        <br>
+            <div class =" container card bg-success" >
+                <div class="card-body">
+                    <hr>
+                    <p class="text-light">Name : {{hero.name}}</p>
+                    <hr>
+                    <p class="text-light">Age : {{hero.age}}</p>
+                    <p class="text-light">Main Power : {{hero.power}}</p>
+                    <p class="text-light">Weakness : {{hero.weakness}}</p>
+                    <p class="text-light">Squad-Membership : {{hero.squadMembership}}</p>
+                    <p class="text-light">Nemesis : {{hero.nemesis}}</p>
+                    <p class="text-light">Experience : {{hero.experience}}</p>
+                    <a href="/#"><button class="btn btn-danger">Delete Hero</button></a>
+                    <hr>
+                </div>
+            </div>
+        <br>
+      </div>
+    </div>
+ </div>
+{{/partial}}
+{{#partial "footer"}}
+{{/partial}}
+{{> layout.hbs}}

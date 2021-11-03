@@ -1,0 +1,54 @@
+{{#partial "content"}}
+<div class="rows">
+    <div class="col-md-8">
+            <div class="form-class">
+                <div class="container bg-success" style="border-radius: 0.6em" >
+
+                    <form action="/squad/new" method="post">
+                        <br>
+                        <p class="text-light" style="text-shadow: 2px 2px 5px red;">CREATE A NEW SUPERHERO SQUAD</p>
+                        <hr>
+                        <div class="form">
+
+                            <label for="name" class="text-light" style="text-shadow: 2px 2px 5px red;">Name</label>
+                            <br>
+                            <input type="text" name="name" id="name" class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="leader" class="text-light" style="text-shadow: 2px 2px 5px red;">Squad Leader</label>
+                            <br>
+                            <input type="text" name="leader" id="leader"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="teamMembers" class="text-light" style="text-shadow: 2px 2px 5px red;">Team Members</label>
+                            <br>
+                            <input type="text" name="teamMembers" id="teamMembers"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="maximumSize" class="text-light" style="text-shadow: 2px 2px 5px red;">Maximum Size</label>
+                            <br>
+                            <input type="number" name="maximumSize" id="maximumSize"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="mission" class="text-light" style="text-shadow: 2px 2px 5px red;">Mission</label>
+                            <br>
+                            <input type="text" name="mission" id="mission"  class="form-control-md">
+                            <br>
+
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-info btn-lg" style=" border: solid white 1px">Create</button>
+                        <hr>
+                    </form>
+
+                </div>
+            </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{{/partial}}
+{{> layout.hbs}}

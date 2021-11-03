@@ -1,0 +1,64 @@
+{{#partial "content"}}
+<div class="rows">
+    <div class="col-md-8">
+            <div class="form-class">
+                <div class="container bg-success" style="border-radius: 0.6em" >
+
+                    <form action="/heroes/new" method="post">
+                        <br>
+                        <p class="text-light" style="text-shadow: 2px 2px 5px red;">CREATE A NEW HERO</p>
+                        <hr>
+                        <div class="form">
+                            <label for="name" class="text-light" style="text-shadow: 2px 2px 5px red;">Name</label>
+                            <br>
+                            <input type="text" name="name" id="name" class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="age" class="text-light" style="text-shadow: 2px 2px 5px red;">Age</label>
+                            <br>
+                            <input type="number" name="age" id="age"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="power" class="text-light" style="text-shadow: 2px 2px 5px red;">Powers</label>
+                            <br>
+                            <input type="text" name="power" id="power"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="weakness" class="text-light" style="text-shadow: 2px 2px 5px red;">Weakness</label>
+                            <br>
+                            <input type="text" name="weakness" id="weakness"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="Squad membership" class="text-light" style="text-shadow: 2px 2px 5px red;">Squad Membership</label>
+                            <br>
+                            <input type="text" name="squadMembership" id="squadMembership"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="Nemesis / Archenemy" class="text-light" style="text-shadow: 2px 2px 5px red;">Nemesis</label>
+                            <br>
+                            <input type="text" name="nemesis" id="nemesis"class="form-control-md">
+                            <br>
+
+                            <br>
+                            <label for="experience fighting bad guys, in years" class="text-light" style="text-shadow: 2px 2px 5px red;">Experience</label>
+                            <br>
+                            <input type="number" name="experience" id="experience"class="form-control-md">
+                            <br>
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-info btn-lg" style=" border: solid white 1px">Create</button>
+                        <hr>
+                    </form>
+
+                </div>
+            </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{{/partial}}
+{{> layout.hbs}}

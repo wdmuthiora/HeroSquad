@@ -1,7 +1,6 @@
 package models;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -78,10 +77,10 @@ class SquadTest {
         assertEquals(true, avengers.allSquads().contains(justiceLeague));
     }
     public Squad setUpSquad(){
-        return new Squad("Avengers","Captain America", new String[]{"Captain America"},10,"Destroy Hydra");
+        return new Squad("Avengers","Captain America", 10,"Destroy Hydra");
     }
     public Squad setUpSquad2(){
-        return new Squad("Justice League", "Superman", new String[]{"Cyborg"}, 7, "Be as cool as the Avengers");
+        return new Squad("Justice League", "Superman",  7, "Be as cool as the Avengers");
 
     }
 }

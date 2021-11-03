@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
     @AfterEach
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Hero.clearAll();
     }
 
@@ -21,7 +21,8 @@ class HeroTest {
    @DisplayName("Returns one instance of Heroes")
    public void all_returnsOneInstanceOfHeroes_true() {
        Hero hulk = setUpTestHero2();
-       assertTrue(hulk.allHeroes().contains(hulk));
+       assertTrue(Hero.allHeroes().contains(hulk));
+       assertEquals(1,Hero.allHeroes().size());
    }
 
    @Test
@@ -29,8 +30,9 @@ class HeroTest {
    public void all_returnsTwoInstancesOfHeroes_true() {
        Hero hulk = setUpTestHero2();
        Hero thor = setUpTestHero3();
-       assertTrue(hulk.allHeroes().contains(hulk));
-       assertTrue(thor.allHeroes().contains(thor));
+       assertTrue(Hero.allHeroes().contains(hulk));
+       assertEquals(2,Hero.allHeroes().size());
+       assertTrue(Hero.allHeroes().contains(thor));
    }
 
    @Test
@@ -95,18 +97,20 @@ class HeroTest {
         Hero flash=setUpTestHero();
         Hero hulk=setUpTestHero2();
         flash.deleteHero(1);
-        assertEquals(1, flash.allHeroes().size());
-        assertEquals(false,flash.allHeroes().contains(flash));
-        assertEquals(true, flash.allHeroes().contains(hulk));
+        assertEquals(1, Hero.allHeroes().size());
+        assertFalse(Hero.allHeroes().contains(flash));
+        assertTrue(Hero.allHeroes().contains(hulk));
     }
 
     private Hero setUpTestHero() {
         return new Hero("flash",30,"Super speed","no limit","Justice League","Reverse Flash", 1000);
     }
+
     private Hero setUpTestHero2(){
         return new Hero("Hulk",21, "Durability","Anger","Avengers","The Abomination", 5 );
 
     }
+
     private Hero setUpTestHero3(){
         return new Hero("Thor", 2000, "Durability", "Pride", "Avengers","Loki",2000);
 
