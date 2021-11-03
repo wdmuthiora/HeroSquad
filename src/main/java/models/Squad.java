@@ -7,10 +7,10 @@ public class Squad {
     private int id;
     private String name;  //figure out how to use Hero object instead
     private String leader;
-    private List <String> teamMembers = new ArrayList<String>();     //array to store team members(figure out how to use Hero object instead).
+    private List <String> teamMembers = new ArrayList<>();     //array to store team members(figure out how to use Hero object instead).
     private int maximumSize;
     private String mission;
-    private static List<Squad> squadInstances = new ArrayList<Squad>();
+    private static List<Squad> squadInstances = new ArrayList<>();
 
     //constructor
     public Squad(String name, String leader, int maximumSize, String mission){
@@ -50,7 +50,6 @@ public class Squad {
         } catch (IndexOutOfBoundsException exception) {
             return null;
         }
-
     }
     public static void clearAllSquads(){
         squadInstances.clear(); //clear as a method is part of the ArrayList class.

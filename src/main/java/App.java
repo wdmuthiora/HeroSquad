@@ -2,6 +2,7 @@ import models.Squad;
 import models.Hero;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
@@ -11,31 +12,34 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-        //home
-        get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            model.put("username", request.session().attribute("username"));
-            return new ModelAndView(model, "index.hbs");
+        Hero hulk =  new Hero("Hulk",21, "Durability","Anger","Avengers","The Abomination", 5 );
+        Hero flash = new Hero("flash",30,"Super speed","no brakes","Justice League","Reverse Flash", 1000);
+        Hero thor = new Hero("Thor", 2000, "Durability", "Pride", "Avengers","Loki",2000);
+
+        //Create a Hero
+        get("/heroes/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-       //to view heroes.
-        get("/hero-view", (request, response) -> {
+        //get all heroes
+        get("/hero-view", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            ArrayList<Hero> heroes = (ArrayList<Hero>) Hero.allHeroes();
+            List<Hero> heroes = Hero.allHeroes(); //From Hero class, get all hero instances and put them into the ArrayList.
+            model.put("hero", hulk);
+            System.out.println(hulk.id);
             model.put("heroes", heroes);
             return new ModelAndView(model, "hero-view.hbs");
         }, new HandlebarsTemplateEngine());
-        //to view squads
-        get("/squad-view", (request, response) -> {
+
+        //get hero by ID.
+        get("/hero-view/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            ArrayList<Squad> squads = (ArrayList<Squad>) Squad.allSquads();
-            model.put("heroes", squads);
-            return new ModelAndView(model, "squad-view.hbs");
+            int idOfHeroToFind = Integer.parseInt(req.params(":id")); //pull id - must match route segment
+            Hero foundHero = Hero.findById(idOfHeroToFind); //use it to find hero
+            model.put("post", foundHero); //add it to model for template to display
+            return new ModelAndView(model, "hero-view.hbs"); //individual hero page.
         }, new HandlebarsTemplateEngine());
-        //to view hero-form.
-        get("/hero-form", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "hero-form.hbs");
-        }, new HandlebarsTemplateEngine());
+
     }
 }
