@@ -25,23 +25,51 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //Create a Hero
-        get("/heroes/new", (req, res) -> {
+        get("/hero-form", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         //Create a Squad
-        get("/squad/new", (req, res) -> {
+        get("/squad-form", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //hero creation.
+        post("/heroes/new", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            int age=Integer.parseInt(request.queryParams("age"));
+            String power=request.queryParams("power");
+            String weakness=request.queryParams("weakness");
+            String squadMembership=request.queryParams("squadMembership");
+            String nemesis=request.queryParams("nemesis");
+            int experience=Integer.parseInt(request.queryParams("experience"));
+            Hero newHero = new Hero(name, age, power, weakness, squadMembership, nemesis, experience);
+            model.put("heroes", newHero);
+            return new ModelAndView(model, "hero-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //squad creation
+        post("/squads/new", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            String leader=request.queryParams("leader");
+            int maximumSize=Integer.parseInt(request.queryParams("maximumSize"));
+            String teamMembers=request.queryParams("teamMembers");
+            String mission=request.queryParams("mission");
+            Squad newSquad = new Squad(name, leader, maximumSize, mission);
+            model.put("squads", newSquad);
+            return new ModelAndView(model, "squad-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
         //get all heroes
         get("/hero-view", (req, res) -> {
             Map<String, ArrayList<Hero>> model = new HashMap<>();
             ArrayList<Hero> heroes = Hero.allHeroes(); //From Hero class, get all hero instances and put them into the ArrayList.
             model.put("heroes", heroes);
-            System.out.println(thor.id);
             return new ModelAndView(model, "hero-view.hbs");
         }, new HandlebarsTemplateEngine());
 
