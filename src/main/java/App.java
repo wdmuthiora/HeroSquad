@@ -18,7 +18,11 @@ public class App {
         Squad justiceLeague = new Squad("Justice League", "Superman",  7, "Be as cool as the Avengers");
         Squad avengers= new Squad("Avengers","Captain America", 10,"Destroy Hydra");
 
-
+        //home
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
 
         //Create a Hero
         get("/heroes/new", (req, res) -> {
