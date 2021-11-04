@@ -2,10 +2,20 @@
   <div class="container bg-secondary">
     <div class="row container">
       <div class="col-md-6">
-        <h3>{{squad.name}} </h3>
-        <a href="#"><button class="btn btn-info btn-md">Details</button></a>
-        <hr>
+        {{#if squads}}
+          {{#each squads}}
+             <p>{{name}}</p>
+             <p>{{leader}}</p>
+             <p>{{mission}}</p>
+             <p>{{id}}</p>
+             <p>{{maximumSize}}</p>
+             <a href="/squad-view/{{id}}"><button class="btn btn-info btn-md">Details</button></a>
+             <hr>
+          {{/each}}
+        {{else}}
         <p class="text-light">Create Your Squad!</p>
+        {{/if}}
+
       </div>
 
       <div class="col-md-6 ">
