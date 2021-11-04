@@ -30,12 +30,6 @@ public class App {
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //Create a Squad
-        get("/squad-form", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "squad-form.hbs");
-        }, new HandlebarsTemplateEngine());
-
         //hero creation.
         post("/heroes/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
@@ -47,8 +41,14 @@ public class App {
             String nemesis=request.queryParams("nemesis");
             int experience=Integer.parseInt(request.queryParams("experience"));
             Hero newHero = new Hero(name, age, power, weakness, squadMembership, nemesis, experience);
-            model.put("heroes", newHero);
-            return new ModelAndView(model, "hero-form.hbs");
+            model.put("hero", newHero);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //Create a Squad
+        get("/squad-form", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         //squad creation
@@ -60,8 +60,8 @@ public class App {
             String teamMembers=request.queryParams("teamMembers");
             String mission=request.queryParams("mission");
             Squad newSquad = new Squad(name, leader, maximumSize, mission);
-            model.put("squads", newSquad);
-            return new ModelAndView(model, "squad-form.hbs");
+            model.put("squad", newSquad);
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
 
