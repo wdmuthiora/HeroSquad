@@ -2,11 +2,11 @@
 
 
 This is an app that allows you to create and assemble Heroes into a Hero squad, to kick ass and take names, or any other mission the team may deem important. Enjoy.
-This project is deployed on [HERO SQUAD](https://wdmuthiora.github.io/HeroSquad/).
+
 
 ## ScreenShots
-<img src="src/assets/1.png">
-<img src="src/assets/2.png">
+<img src="src/main/resources/public/images/squad-screenshot.png">
+<img src="src/main/resources/public/images/hero-screenshot.png">
 
 ##Project Setup Instructions
 
