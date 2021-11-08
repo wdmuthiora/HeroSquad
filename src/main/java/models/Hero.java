@@ -1,17 +1,16 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Hero {
-    public int id;
-    public String name;
-    public int age;
-    public String power;
-    public String weakness;
-    public String squadMembership;
-    public String nemesis;
-    public int experience;
+    private int id;
+    private String name;
+    private int age;
+    private String power;
+    private String weakness;
+    private String squadMembership;
+    private String nemesis;
+    private int experience;
 
     //hold all Heroes created
     private static ArrayList<Hero> heroInstances = new ArrayList<>();

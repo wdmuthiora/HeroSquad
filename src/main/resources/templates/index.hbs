@@ -1,25 +1,27 @@
 {{#partial "content"}}
 <div class="row" style="background-color: black;">
-          <h1 class="title; text-success">WELCOME TO HERO-SQUAD</h1>
-              {{#if username}}
+    {{#if username}}
+        <h1 class="title; text-success">WELCOME TO HERO-SQUAD {{username}}</h1>
 
-          <div class="row">
-               <div class="create">
-                   <a href="/hero-form"><button class="btn btn-success btn-md">Create Hero</button></a>
-                   <a href="/squad-form"><button class="btn btn-success btn-md">Create Squad</button></a>
-                    <hr>
-               </div>
+        <div class="row">
+            <div class="create">
+                <a href="/hero-form"><button class="btn btn-success btn-md">Create Hero</button></a>
+                <a href="/squad-form"><button class="btn btn-success btn-md">Create Squad</button></a>
+                <hr>
+            </div>
     {{else}}
+       <h1 class="title; text-success">WELCOME TO HERO-SQUAD</h1>
+       <h4 class="text" style="color: white;">Sign in to create a Squad or Hero</h4>
        <form action="/index" method="post">
-          <h3 class="text" style="color: white;">Sign in to create a Squad or Hero</h3><br><br>
           <label for="username" style="color: white;">Name</label>
           <input type="text" name="username" id="username">
           <button type="submit" class="btn btn-primary btn-md">Sign In</button>
+          <hr>
        </form>
        <br>
     {{/if}}
-        <img src="./images/hero original-cropped.jpg" style="background-color: black;">
-
+       <img src="./images/hero original-cropped.jpg" style="background-color: black;">
+       <hr>
 </div>
 {{/partial}}
 {{> layout.hbs}}

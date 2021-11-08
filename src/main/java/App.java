@@ -2,7 +2,6 @@ import models.Squad;
 import models.Hero;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
@@ -12,7 +11,6 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-
 
         //home
         get("/", (request, response) -> {
@@ -34,7 +32,7 @@ public class App {
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //hero creation.
+        //post hero creation.
         post("/heroes/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
