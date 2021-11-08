@@ -12,11 +12,7 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-        Hero hulk =  new Hero("Hulk",21, "Durability","Anger","Avengers","The Abomination", 5 );
-        Hero flash = new Hero("flash",30,"Super speed","no brakes","Justice League","Reverse Flash", 1000);
-        Hero thor = new Hero("Thor", 2000, "Durability", "Pride", "Avengers","Loki",2000);
-        Squad justiceLeague = new Squad("Justice League", "Superman",  7, "Be as cool as the Avengers");
-        Squad avengers= new Squad("Avengers","Captain America", 10,"Destroy Hydra");
+
 
         //home
         get("/", (request, response) -> {
@@ -42,12 +38,12 @@ public class App {
         post("/heroes/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            int age=Integer.parseInt(request.queryParams("age"));
-            String power=request.queryParams("power");
-            String weakness=request.queryParams("weakness");
-            String squadMembership=request.queryParams("squadMembership");
-            String nemesis=request.queryParams("nemesis");
-            int experience=Integer.parseInt(request.queryParams("experience"));
+            int age = Integer.parseInt(request.queryParams("age"));
+            String power = request.queryParams("power");
+            String weakness = request.queryParams("weakness");
+            String squadMembership = request.queryParams("squadMembership");
+            String nemesis = request.queryParams("nemesis");
+            int experience = Integer.parseInt(request.queryParams("experience"));
             Hero newHero = new Hero(name, age, power, weakness, squadMembership, nemesis, experience);
             model.put("hero", newHero);
             return new ModelAndView(model, "success.hbs");
@@ -63,10 +59,10 @@ public class App {
         post("/squads/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            String leader=request.queryParams("leader");
-            int maximumSize=Integer.parseInt(request.queryParams("maximumSize"));
-            String teamMembers=request.queryParams("teamMembers");
-            String mission=request.queryParams("mission");
+            String leader = request.queryParams("leader");
+            int maximumSize = Integer.parseInt(request.queryParams("maximumSize"));
+            String teamMembers = request.queryParams("teamMembers");
+            String mission = request.queryParams("mission");
             Squad newSquad = new Squad(name, leader, maximumSize, mission);
             model.put("squad", newSquad);
             return new ModelAndView(model, "success.hbs");

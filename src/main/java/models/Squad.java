@@ -41,9 +41,11 @@ public class Squad {
     public String getSquadMission() {
         return mission;
     }
+
     public void deleteSquad(int id){
         squadInstances.remove(id-1);
     }
+
     public static Squad findById(int id){
         try {
             return squadInstances.get(id-1);
@@ -51,6 +53,7 @@ public class Squad {
             return null;
         }
     }
+
     public static void clearAllSquads(){
         squadInstances.clear(); //clear as a method is part of the ArrayList class.
     }
