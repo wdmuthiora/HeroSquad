@@ -47,6 +47,14 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //delete all heroes
+        get("/heroes/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Hero.clearAll();
+            model.put("heroes",Hero.allHeroes());
+            return new ModelAndView(model,"hero-view.hbs");
+        },new HandlebarsTemplateEngine());
+
         //Create a Squad
         get("/squad-form", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -83,6 +91,15 @@ public class App {
             return new ModelAndView(model, "squad-view.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+        //delete all squads
+        get("/squads/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Squad.clearAllSquads();
+            model.put("squads",Squad.allSquads());
+            return new ModelAndView(model,"squad-view.hbs");
+
+        },new HandlebarsTemplateEngine());
 
         //get hero by ID.
         get("/hero-view/:id", (req, res) -> {
