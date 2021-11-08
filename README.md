@@ -9,7 +9,11 @@ This is an app that allows you to create and assemble Heroes into a Hero squad, 
 <img src="src/main/resources/public/images/hero-screenshot.png">
 
 ##Project Setup Instructions
-
+- Fork this repo
+- Clone this repo
+- Open  the project in your desired editor (I use IntelliJ)
+- Run the tests and make sure they pass
+- Run the app
 
 ## Development.
 
