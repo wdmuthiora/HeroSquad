@@ -5,10 +5,10 @@
         {{#if squads}}
           {{#each squads}}
              <p>{{name}}</p>
-             <p>{{leader}}</p>
-             <p>{{mission}}</p>
-             <p>{{id}}</p>
-             <p>{{maximumSize}}</p>
+{{!--              <p>{{leader}}</p> --}}
+{{!--              <p>{{mission}}</p> --}}
+{{!--              <p>{{id}}</p> --}}
+{{!--              <p>{{maximumSize}}</p> --}}
              <a href="/squad-view/{{id}}"><button class="btn btn-info btn-md">Details</button></a>
              <hr>
           {{/each}}
@@ -16,12 +16,15 @@
             <hr>
             <p>There are no squads here.</p>
             <a href="/hero-form"><button class="btn btn-success btn-md">Create Your Squad!</button></a>
+            <hr>
         {{/if}}
 
       </div>
 
+{{!-- particular details --}}
       <div class="col-md-6 ">
         <br>
+          {{#if squad}}
             <div class =" container card bg-success" >
                 <div class="card-body">
                     <hr>
@@ -35,11 +38,17 @@
                     <hr>
                 </div>
             </div>
+          {{/if}}
         <br>
       </div>
     </div>
  </div>
 {{/partial}}
 {{#partial "footer"}}
+    {{#if squads}}
+        <hr>
+        <a href="/squads/delete" style="margin: 1em;"><button class="btn btn-md btn-danger"> Delete All Squads</button></a>
+    {{else}}
+    {{/if}}
 {{/partial}}
 {{> layout.hbs}}
