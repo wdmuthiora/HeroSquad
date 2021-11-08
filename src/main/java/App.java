@@ -24,6 +24,14 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/index", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String inputtedUsername = request.queryParams("username");
+            request.session().attribute("username", inputtedUsername);
+            model.put("username", inputtedUsername);
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
         //Create a Hero
         get("/hero-form", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

@@ -1,7 +1,25 @@
 {{#partial "content"}}
 <div class="row" style="background-color: black;">
           <h1 class="title; text-success">WELCOME TO HERO-SQUAD</h1>
-          <img src="./images/hero original-cropped.jpg" style="background-color: black;">
+              {{#if username}}
+
+          <div class="row">
+               <div class="create">
+                   <a href="/hero-form"><button class="btn btn-success btn-md">Create Hero</button></a>
+                   <a href="/squad-form"><button class="btn btn-success btn-md">Create Squad</button></a>
+                    <hr>
+               </div>
+    {{else}}
+       <form action="/index" method="post">
+          <h3 class="text" style="color: white;">Sign in to create a Squad or Hero</h3><br><br>
+          <label for="username" style="color: white;">Name</label>
+          <input type="text" name="username" id="username">
+          <button type="submit" class="btn btn-primary btn-md">Sign In</button>
+       </form>
+       <br>
+    {{/if}}
+        <img src="./images/hero original-cropped.jpg" style="background-color: black;">
+
 </div>
 {{/partial}}
 {{> layout.hbs}}
