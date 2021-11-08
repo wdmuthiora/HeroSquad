@@ -53,7 +53,7 @@ public class App {
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //squad creation
+        //post squad creation
         post("/squads/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
@@ -78,7 +78,7 @@ public class App {
         //get all squad
         get("/squad-view", (req, res) -> {
             Map<String, ArrayList<Squad>> model = new HashMap<>();
-            ArrayList<Squad> squads = Hero.allHeroes(); //From Squad class, get all hero instances and put them into the ArrayList.
+            ArrayList<Squad> squads = Squad.allSquads(); //From Squad class, get all hero instances and put them into the ArrayList.
             model.put("squads", squads);
             return new ModelAndView(model, "squad-view.hbs");
         }, new HandlebarsTemplateEngine());
@@ -102,4 +102,5 @@ public class App {
             return new ModelAndView(model, "squad-view.hbs"); //individual squad page.
         }, new HandlebarsTemplateEngine());
     }
+
 }

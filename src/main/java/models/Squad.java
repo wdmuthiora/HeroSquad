@@ -10,7 +10,7 @@ public class Squad {
     private List <String> teamMembers = new ArrayList<>();     //array to store team members(figure out how to use Hero object instead).
     private int maximumSize;
     private String mission;
-    private static List<Squad> squadInstances = new ArrayList<>();
+    private static ArrayList<Squad> squadInstances = new ArrayList<>();
 
     //constructor
     public Squad(String name, String leader, int maximumSize, String mission){
@@ -22,7 +22,7 @@ public class Squad {
         this.mission=mission;
         squadInstances.add(this);
     }
-    public static List<Squad> allSquads(){
+    public static ArrayList<Squad> allSquads(){
         return squadInstances;
     }
 
